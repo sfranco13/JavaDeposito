@@ -1,23 +1,44 @@
 package cuentas;
 
+/**
+ * Clase que gestiona los datos de una cuenta bancaria.
+ * @author Silvia
+ * @version 1.0
+ */
 public class CCuenta {
+    /** Nombre del titular de la cuenta */
     private String nombre;
+    /** Número de la cuenta bancaria */
     private String cuenta;
+    /** Saldo actual en la cuenta */
     private double saldo;
+    /** Tipo de interés aplicado a la cuenta */
     private double tipoInterés;
 
+    /**
+     * @return el número de cuenta
+     */
     public String getCuenta() {
         return cuenta;
     }
 
+    /**
+     * @param cuenta el número de cuenta a establecer
+     */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
+    /**
+     * @return el tipo de interés
+     */
     public double getTipoInterés() {
         return tipoInterés;
     }
 
+    /**
+     * @param tipoInterés el interés a establecer
+     */
     public void setTipoInterés(double tipoInterés) {
         this.tipoInterés = tipoInterés;
     }
@@ -49,11 +70,20 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Devuelve el saldo actual de la cuenta.
+     * @return El saldo disponible en tipo double.
+     */
     public double estado()
     {
         return saldo;
     }
 
+    /**
+     * Incrementa el saldo de la cuenta con la cantidad indicada.
+     * @param cantidad La suma a ingresar.
+     * @throws Exception Si la cantidad es negativa.
+     */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -61,6 +91,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     * Reduce el saldo de la cuenta tras una extracción.
+     * @param cantidad La suma a retirar.
+     * @throws Exception Si la cantidad es negativa o el saldo es insuficiente.
+     */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
